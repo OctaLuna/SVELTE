@@ -1,18 +1,43 @@
 <script>
 	export let name;
+	//Estamos creando una variable en Svelte, de nombre LastName
+	//Si queremos traerlo como una propiedad tenemos que incluir el valor export
+	export let lastName;
+	//Esto es para agregar un nuevo elemento a nuestro proyecto
+	let svelteLogo = "https://arepa.s3.amazonaws.com/svelte-logo.png"
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
 <style>
+	/*Vamos a poner estilos globales a la aplicación*/
+	:global(body){
+		/*Esto es para poner color en nuestro fondo*/
+		background-color: var(--color-fondo);
+		color: #000000;
+	} 
+	/*Ahora vamos a aplicar variables, vamos a poder establecer los colores que vamos a utilizar dentro de nuestro proyecto*/
+	:global(:root){
+		/*Estamos creando variables para despues no tener que utilizar o escribir muchas veces un tipo de color */
+		--color-texto: rgb(0, 0, 0);
+		--color-fondo: #a1fcee;
+		/*#5affe7;*/
+		/*00f2ff;*/
+	}
+	p{
+		/*Estamos poniendo color a el texto*/
+		color: var(--color-texto);
+		/*Esto es para editar el tamaño del texto*/
+		font-size: 22px;
+	}
 	main {
 		text-align: center;
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
+	}
+
+	/*Estamos editanto el tamaño de las imagenenes que tenemos en nuestro proyecto que esten en main*/
+	main img {
+		width: 30%;
 	}
 
 	h1 {
@@ -28,3 +53,10 @@
 		}
 	}
 </style>
+
+<main>
+	<h1>Hello {name} {lastName}!</h1>
+	<p>Data Science Developer</p>
+	<img src={svelteLogo} alt="Svelte">
+</main>
+
