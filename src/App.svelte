@@ -1,10 +1,13 @@
 <script>
+	//Estamos importanto nuestro About donde tenemos nuestro texto
+	import About from "./components/About.svelte"
 	export let name;
 	//Estamos creando una variable en Svelte, de nombre LastName
 	//Si queremos traerlo como una propiedad tenemos que incluir el valor export
 	export let lastName;
 	//Esto es para agregar un nuevo elemento a nuestro proyecto
 	let svelteLogo = "https://arepa.s3.amazonaws.com/svelte-logo.png"
+
 </script>
 
 <style>
@@ -22,12 +25,7 @@
 		/*#5affe7;*/
 		/*00f2ff;*/
 	}
-	p{
-		/*Estamos poniendo color a el texto*/
-		color: var(--color-texto);
-		/*Esto es para editar el tamaño del texto*/
-		font-size: 22px;
-	}
+
 	main {
 		text-align: center;
 		padding: 1em;
@@ -56,7 +54,7 @@
 
 <main>
 	<h1>Hello {name} {lastName}!</h1>
-	<p>Data Science Developer</p>
+	<About />
 	<img src={svelteLogo} alt="Svelte">
 </main>
 
