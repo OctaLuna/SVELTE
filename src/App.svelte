@@ -1,6 +1,11 @@
 <script>
 	//Estamos importanto nuestro About donde tenemos nuestro texto
 	import About from "./components/About.svelte"
+	//Estamos exportando nuestro texto de nuestro script Text.svelte
+	import Text from "./components/Text.svelte"
+	//Estamos exportando nuestro script Person
+	import Person from "./components/Person.svelte"
+
 	export let name;
 	//Estamos creando una variable en Svelte, de nombre LastName
 	//Si queremos traerlo como una propiedad tenemos que incluir el valor export
@@ -8,6 +13,13 @@
 	//Esto es para agregar un nuevo elemento a nuestro proyecto
 	let svelteLogo = "https://arepa.s3.amazonaws.com/svelte-logo.png"
 
+	//const es para que sea un elemento unico dentro del documento
+	//Estos los datos personajes 
+	const data = {
+		name: "Octavio",
+		LastName: "Luna",
+		age: 16,
+	}
 </script>
 
 <style>
@@ -54,7 +66,13 @@
 
 <main>
 	<h1>Hello {name} {lastName}!</h1>
+	<!--Estamos llamando a el script About, pero pasa lo mismo que con Text que no tiene un valor entonces se pondra el valor por defecto-->
 	<About />
+	<!--Estamos imprimiendo un valor de nuestra variable anotherText de nuestro script Text-->
+	<Text anotherText= "Hola!" />
+	<!--Estamos Usando nuestro script Text pero sin un valor, entonces se pondra el valor por defecto-->
+	<Text />
+	<Person name={data.name} LastName={data.LastName} age={data.age} />
 	<img src={svelteLogo} alt="Svelte">
 </main>
 
