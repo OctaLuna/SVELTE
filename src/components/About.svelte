@@ -1,6 +1,10 @@
 <!--Esto es para crear componente o agregar-->
 <script>
     //VARIABLES
+
+    //Estamos importando el script button
+    import Button from "./Button.svelte";
+
     //Estamos creando un variable donde tenemos escrito nuestra descripción
     let someText = "Data Science Developer at Platzi";
     //Esta variable es para crear un contador
@@ -50,7 +54,10 @@
     </p>
     -->
 
-    
+    <!--Esto es el script Button.Svelte, le estamos poniendo sus variable o condicionales, -->
+    <Button text="Click" count={count} on:click={handleClick}/>
+    <!---->
+    <Button text="Dark Mode" on:click={toggle}/>
     <!--Estamos creando un boton para nuestro contador, {count} estamos referenciando la variable count que es el contador
     on:click={handleClick} Esto es para que cada vez que le demos click a nuestro boton llamamos a la funcion handleClick
     count == 0 ? "" : count Esto es para que, cuando el valor de count es 0 no muestre nada pero si no es 0 muestre el contador-->

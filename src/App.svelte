@@ -7,6 +7,8 @@
 	import Person from "./components/Person.svelte";
 	//Una vez hecho el Skills lo vamos a traer
 	import Skills from "./components/Skills.svelte";
+	//Ahora estamos importando el script input para saludar
+	import Input from "./components/Input.svelte"
 
 	export let name;
 	//Estamos creando una variable en Svelte, de nombre LastName
@@ -80,11 +82,14 @@
 	<Text anotherText= "Hola!" />
 	<!--Estamos Usando nuestro script Text pero sin un valor, entonces se pondra el valor por defecto-->
 	<Text />
-	<!---->
+	<!--Estamos imprimiendo nuestro script Skills-->
 	<Skills/>
+	<!--Estamos imprimiendo nuestro script Input-->
+	<Input/>
 	<!--Estamo -->
 	<Person name={data.name} LastName={data.LastName} age={data.age} />
 	<!--Estamos importando una imagen-->
 	<img src={svelteLogo} alt="Svelte">
+
 </main>
 
