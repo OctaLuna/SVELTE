@@ -37,6 +37,12 @@
 		/*#5affe7;*/
 		/*00f2ff;*/
 	}
+	/*Lo que hacemos es activar un nuevo elemento global y hacemos efecto sobre doby.dark-mode*/
+	:global(body.dark-mode){
+		/*Lo que estamos haciendo es que cada vez que  cambiemos al modo dark.mode cambie esto de color*/
+		background-color: #1d3040;
+		color: #bfc3c7;
+	}
 
 	main {
 		text-align: center;
@@ -75,4 +81,4 @@
 	<Person name={data.name} LastName={data.LastName} age={data.age} />
 	<img src={svelteLogo} alt="Svelte">
 </main>
-
+-
